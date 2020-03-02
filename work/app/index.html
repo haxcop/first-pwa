@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- register service worker -->
+<script>
+        if ('serviceWorker' in navigator)
+            {
+              window.addEventListener('load', () => {
+              navigator.serviceWorker.register('./service-worker.js')
+              .then(() => { console.log("[ PWA Fire Bundle ] Service Worker Registered"); });
+            } );
+          }
+        </script>
+
+    <!-- end of service worker -->
+    <!-- start of web manifest -->
+    <link rel="manifest" href="./app.webmanifest">
+    <!-- end of web manifest -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -27,7 +42,7 @@
                 <a href="" class="tabnav-tab">Codelabs</a>
             </nav>
         </div>
-        
+
         <div class="Box">
             <div class="Box-row d-flex flex-items-center">
                 <div class="flex-auto">
@@ -59,7 +74,7 @@
                 <a href="https://pwafire.org/developer/docs/progressive-user-interface/" target="_blank" rel="noopenner" type="button" class="btn btn-primary" name="button">View</a>
             </div>
         </div>
-    
+
        <section class="issue">
         <div class="profile-timeline-card bg-white border border-gray-dark rounded-1 p-3">
             <svg class="octicon octicon-issue-closed closed d-inline-block mt-1 float-left" title="Closed" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
@@ -69,11 +84,11 @@
                 <h3 class="lh-condensed my-0">
                     <a class="text-gray-dark" data-hovercard-type="issue" href="https://pwafire.org/developer/docs/progressive-user-interface/">Adopt Jenga background and foreground color</a>
                 </h3>
-        
+
                 <div class="text-gray mb-0 mt-2 ">
                     <p>Jenga theming</p>
                 </div>
-        
+
                 <div class="f6 text-gray mt-2">
                     1 comment
                 </div>
@@ -83,8 +98,8 @@
     </main>
 
     <footer>
-        <p> 
-            Made with <a href="https://primer.style/" target="_blank" rel="noopenner">GitHub's Primer</a>. 
+        <p>
+            Made with <a href="https://primer.style/" target="_blank" rel="noopenner">GitHub's Primer</a>.
             You can <a href="https://github.com/pwafire/first-pwa/fork" target="_blank" rel="noopenner">fork on the project here</a>
         </p>
     </footer>
